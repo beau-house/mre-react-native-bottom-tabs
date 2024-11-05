@@ -8,6 +8,11 @@ This is a minimal reproducible example of a possible issue when using [react-nat
 
 When using FlashList within a native bottom tab navigator on Android, warnings appear about FlashList's rendered size being unusable (< 2px) despite being wrapped in a view with a valid size. This occurs specifically during tab transitions, where layout measurements temporarily report zero dimensions before stabilizing.
 
+
+
+https://github.com/user-attachments/assets/3a6e1baa-e935-40f2-996e-d5f518961ac2
+
+
 ### Reproduction Steps
 
 1. Set up a React Native project with react-native-bottom-tabs
