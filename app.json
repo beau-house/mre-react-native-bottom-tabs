@@ -12,16 +12,35 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.beauhouse.mrernnativebottomtabs"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.beauhouse.mrernnativebottomtabs"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "14.0"
+          }
+        }
+      ],
+      "react-native-edge-to-edge",
+      "react-native-bottom-tabs"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "b8c7dcda-52ae-4e4f-9067-5b5107b55d7c"
+      }
     }
   }
 }
