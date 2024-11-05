@@ -1,4 +1,3 @@
-import React from 'react'
 import { FlashList } from '@shopify/flash-list'
 import { Text, View, StyleSheet } from 'react-native'
 
@@ -27,19 +26,25 @@ const ITEMS = [
 
 export default function ScreenOne() {
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      onLayout={(event) => {
+        const { width, height } = event.nativeEvent.layout
+        console.log('FlashList Parent View Dimensions:', width, height)
+      }}
+    >
       <FlashList
         data={ITEMS}
+        estimatedItemSize={50}
+        keyExtractor={(item) => item.id}
+        ListHeaderComponent={
+          <Text style={styles.headerText}>Screen One With FlashList</Text>
+        }
         renderItem={({ item }) => (
           <View style={styles.itemContainer}>
             <Text style={styles.itemText}>{item.title}</Text>
           </View>
         )}
-        ListHeaderComponent={
-          <Text style={styles.headerText}>Screen One With FlashList</Text>
-        }
-        keyExtractor={(item) => item.id}
-        estimatedItemSize={50}
       />
     </View>
   )
@@ -48,7 +53,7 @@ export default function ScreenOne() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 12,
+    padding: 24,
     width: '100%',
   },
   headerText: {

@@ -6,7 +6,7 @@ import RootNavigation from './src/components/Navigation/RootNavigation'
 export default function App() {
   return (
     <SafeAreaProvider>
-      <SystemBars style="light" />
+      <SystemBars style="auto" />
       <RootNavigation />
     </SafeAreaProvider>
   )
